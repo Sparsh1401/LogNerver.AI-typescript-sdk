@@ -1,0 +1,24 @@
+{
+  "name": "lognerve.ai",
+  "version": "1.0.0",
+  "description": "A sdk to support typescript application observability",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk.git"
+  },
+  "author": "Rachit And Sparsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk/issues"
+  },
+  "homepage": "https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk#readme",
+  "dependencies": {
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
