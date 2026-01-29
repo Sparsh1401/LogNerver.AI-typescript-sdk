@@ -2,23 +2,56 @@
   "name": "lognerve.ai",
   "version": "1.0.0",
   "description": "A sdk to support typescript application observability",
-  "main": "app.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{ts,js}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js}\"",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
+    "prepublishOnly": "npm run build && npm run lint && npm run format:check",
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk.git"
   },
-  "author": "Rachit And Sparsh",
+  "author": "Sparsh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk/issues"
   },
   "homepage": "https://github.com/Sparsh1401/LogNerver.AI-typescript-sdk#readme",
   "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.879.0",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.62.1",
+    "@opentelemetry/exporter-jaeger": "^2.0.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.203.0",
+    "@opentelemetry/node": "^0.24.0",
+    "@opentelemetry/resources": "^2.0.1",
+    "@opentelemetry/sdk-metrics": "^2.0.1",
+    "@opentelemetry/sdk-node": "^0.203.0",
+    "@opentelemetry/sdk-trace-node": "^2.0.1",
+    "@opentelemetry/semantic-conventions": "^1.27.0",
     "@types/node": "^24.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "winston": "^3.17.0",
+    "winston-cloudwatch": "^6.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "eslint": "^9.39.2",
+    "jest": "^29.7.0",
+    "prettier": "^3.7.4",
+    "ts-jest": "^29.4.1",
+    "typescript-eslint": "^8.51.0"
   }
 }
